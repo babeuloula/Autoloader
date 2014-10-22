@@ -17,7 +17,7 @@
                 return false;
             }
 
-            $classFilePath = __DIR__ . DIRECTORY_SEPARATOR . $className . '.php';
+            $classFilePath = __DIR__ . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $className) . '.php';
 
             if ((file_exists($classFilePath) === false) || (is_readable($classFilePath) === false)) {
                 return false;
